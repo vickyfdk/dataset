@@ -17,7 +17,7 @@ pipeline {
 				usePromotionTimestamp: false, 
 				useWorkspaceInPromotion: false, 
 				verbose: false)])
-				slackSend channel: 'jenkins-deployment-logs', tokenCredentialId: 'slack-ID'
+				slackSend channel: 'jenkins-deployment-logs', color: 'good', message: 'Jenkins deployment Build is successful', tokenCredentialId: 'slack-ID'
 			}
 		}
 	}
