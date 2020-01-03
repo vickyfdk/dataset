@@ -17,21 +17,7 @@ pipeline {
 				usePromotionTimestamp: false, 
 				useWorkspaceInPromotion: false, 
 				verbose: false)])
-				slackSend channel: 'jenkins-deployment-logs', tokenCredentialId: 'slack-ID' 
-				def call(String buildResult) {
-  if ( buildResult == "SUCCESS" ) {
-    slackSend color: "good", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was successful"
-  }
-  else if( buildResult == "FAILURE" ) { 
-    slackSend color: "danger", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was failed"
-  }
-  else if( buildResult == "UNSTABLE" ) { 
-    slackSend color: "warning", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was unstable"
-  }
-  else {
-    slackSend color: "danger", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} its resulat was unclear"	
-  }
-}
+				slackSend channel: 'jenkins-deployment-logs', color: '#439FE0', message: '${env.JOB_NAME} ${env.BUILD_NUMBER}', tokenCredentialId: 'slack-ID'
 			}
 		}
 	}
