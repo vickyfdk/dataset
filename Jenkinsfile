@@ -19,11 +19,6 @@ pipeline {
 				useWorkspaceInPromotion: false, 
 				verbose: false)])
 			}
-		stage('Build Notification') {
-			steps {
-				slackSend channel: 'jenkins-deployment-logs', tokenCredentialId: 'slack-ID'
-			}
-		}	
 		}
 	}
 
