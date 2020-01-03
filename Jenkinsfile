@@ -17,7 +17,7 @@ pipeline {
 				usePromotionTimestamp: false, 
 				useWorkspaceInPromotion: false, 
 				verbose: false)])
-				slackSend channel: 'jenkins-deployment-logs', color: '#439FE0', message: '${env.JOB_NAME} ${env.BUILD_NUMBER}', tokenCredentialId: 'slack-ID'
+				slackSend channel: 'jenkins-deployment-logs', color: '#439FE0', message: ${env.JOB_NAME} ${env.BUILD_NUMBER}, tokenCredentialId: 'slack-ID'
 			}
 		}
 	}
