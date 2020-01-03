@@ -4,8 +4,7 @@ pipeline {
 		stage('Test run') {
 			steps {
 				sshPublisher(publishers: [sshPublisherDesc(configName: 'Bione VPS', transfers: [sshTransfer(cleanRemote: false, excludes: '', 
-				execCommand: '''cd /home 
-				sudo mkdir vickyfdk-4''', 
+				execCommand: '''cd /home, sudo touch faridkot, sudo mkdir testing-pipeline''', 
 				execTimeout: 12000, 
 				flatten: false, 
 				makeEmptyDirs: false, 
