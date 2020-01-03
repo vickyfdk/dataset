@@ -19,6 +19,11 @@ pipeline {
 				useWorkspaceInPromotion: false, 
 				verbose: false)])
 			}
+		stage('Send Notification to Slack'){
+			steps {
+				slackSend channel: 'jenkins-deployment-logs', tokenCredentialId: 'slack-ID'
+			}
+		}
 		}
 	}
 
