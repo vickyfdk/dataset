@@ -5,7 +5,7 @@ pipeline {
 			steps {
 				sshPublisher(publishers: [sshPublisherDesc(configName: 'Bione VPS', transfers: [sshTransfer(cleanRemote: false, excludes: '', 
 				execCommand: '''php -v
-				/etc/init.d/apache2 restart''', 
+				sudo /etc/init.d/apache2 restart''', 
 				execTimeout: 12000, 
 				flatten: false, 
 				makeEmptyDirs: false, 
