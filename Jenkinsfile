@@ -22,10 +22,10 @@ pipeline {
 		}
 	}
 	post {
-		Unstable {
+		unstable {
 		slackSend(color: '#dc3545', message: "Error publishing")
 		}
-		Success {
+		success {
 		slackSend(color: '#28a745', message: "All good")
 		}
 	}
