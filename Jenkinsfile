@@ -21,21 +21,12 @@ pipeline {
 			}
 		}
 	}
-		post {
-    failure {
-        script {
-                if (BUILDING_TAG == 'yes') {
-                    slackSend(color: '#dc3545', message: "Error publishing")
-                }
-            }
-        }
-
-        success {
-            script {
-                if (BUILDING_TAG == 'yes') {
-                    slackSend(color: '#28a745', message: "Published")
-                }
-            }
-        }	
+	post {
+		Unstable {
+		slackSend(color: '#dc3545', message: "Error publishing")
+		}
+		Success {
+		slackSend(color: '#28a745', message: "All good")
+		}
 	}
 }
