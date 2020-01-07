@@ -18,16 +18,15 @@ pipeline {
 				useWorkspaceInPromotion: false, 
 				verbose: false)])
 				//slackSend channel: 'jenkins-deployment-logs', color: '#439FE0', message: "${env.JOB_NAME} ${env.BUILD_NUMBER}", tokenCredentialId: 'slack-ID'
-				
 			}
 		}
 	}
 	post {
 		unstable {
-		slackSend(color: '#dc3545', message: "Build Is Unstable ${env.JOB_NAME} ${env.BUILD_NUMBER}")
+			slackSend(color: '#dc3545', message: "Build Is Unstable ${env.JOB_NAME} ${env.BUILD_NUMBER}")
 		}
 		success {
-		slackSend(color: '#28a745', message: "Build Is Successful ${env.JOB_NAME} ${env.BUILD_NUMBER}")
+			slackSend(color: '#28a745', message: "Build Is Successful ${env.JOB_NAME} ${env.BUILD_NUMBER}")
 		}
 	}
 }
