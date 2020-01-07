@@ -24,10 +24,10 @@ pipeline {
 	}
 	post {
 		unstable {
-		slackSend(color: '#dc3545', message: "Error publishing")
+		slackSend(color: '#dc3545', message: "Build Is Unstable ${env.JOB_NAME} ${env.BUILD_NUMBER}")
 		}
 		success {
-		slackSend(color: '#28a745', message: "All good")
+		slackSend(color: '#28a745', message: "Build Is Successful ${env.JOB_NAME} ${env.BUILD_NUMBER}")
 		}
 	}
 }
