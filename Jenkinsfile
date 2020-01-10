@@ -25,7 +25,7 @@ pipeline {
 				Thank you for using our services.		
 
 				Your Best Friend:
-				Jenkins''', recipientProviders: [developers(), culprits()], subject: 'Jenkins Build Notiication - staging.bione.in', to: 'bdm@techwinst.com'
+				Jenkins''', recipientProviders: [developers(), culprits()], subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'bdm@techwinst.com'
 			}
 		}
 	}
