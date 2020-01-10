@@ -18,7 +18,7 @@ pipeline {
 				useWorkspaceInPromotion: false, 
 				verbose: false)])
 				//slackSend channel: 'jenkins-deployment-logs', color: '#439FE0', message: "${env.JOB_NAME} ${env.BUILD_NUMBER}", tokenCredentialId: 'slack-ID'
-				emailext attachLog: true, body: '', recipientProviders: [developers(), culprits()], subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'singh.gursharan34@gmail.com'
+				emailext attachLog: true, body: '', recipientProviders: [developers(), culprits()], subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'bdm@techwinst.com'
 			}
 		}
 	}
