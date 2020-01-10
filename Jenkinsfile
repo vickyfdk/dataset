@@ -18,7 +18,14 @@ pipeline {
 				useWorkspaceInPromotion: false, 
 				verbose: false)])
 				//slackSend channel: 'jenkins-deployment-logs', color: '#439FE0', message: "${env.JOB_NAME} ${env.BUILD_NUMBER}", tokenCredentialId: 'slack-ID'
-				emailext attachLog: true, body: '', recipientProviders: [developers(), culprits()], subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'bdm@techwinst.com'
+				emailext attachLog: true, body: '''This is system generated email notification from Jenkins. Your build logs has attached to this email. 
+
+				Kindly do not attempt to reply this email as this will go nowhere.
+
+				Thank you for using our services.		
+
+				Your Best Friend:
+				Jenkins''', recipientProviders: [developers(), culprits()], subject: 'Jenkins Build Notiication - staging.bione.in', to: 'bdm@techwinst.com'
 			}
 		}
 	}
