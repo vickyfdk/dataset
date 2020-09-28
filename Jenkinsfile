@@ -2,7 +2,7 @@ pipeline {
   agent any
     stages {
       stage ("Chekout")
-        checkout scm
+        sh 'checkout scm'
     }
   
 }
